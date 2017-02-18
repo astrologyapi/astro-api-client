@@ -1,10 +1,10 @@
-##Vedic Rishi Astro APIs
+##Astrology APIs
 
 Vedic Rishi does all the complex astronomical and algorithmic calculations for your astrology websites or astro-matching apps and provides you with simple APIs to create awesome user interfaces for your users
 
 #### Vedic Rishi REST Web Service Interface
 
-Since the Vedic Rishi Astro API is based on REST principles, it's very easy to write and test applications. You can use your browser to access URLs, and you can use pretty much any HTTP client in any programming language to interact with the API.
+Since the Astrology API is based on REST principles, it's very easy to write and test applications. You can use your browser to access URLs, and you can use pretty much any HTTP client in any programming language to interact with the API.
 
 #### API Endpoint
 
@@ -14,7 +14,7 @@ For example - the /horo_chart/D1/ API call is reachable at-
 
 #### RESTful
 
-All Vedic Rishi Astro APIs are RESTful APIs. Following are the known caveats -
+All Astrology APIs are RESTful APIs. Following are the known caveats -
 
 1.  All API calls should be made with HTTP POST unless mentioned otherwise
 2.  Response status other than HTTP 200 can be considered as an error
@@ -26,7 +26,7 @@ Request data is passed to the API by POSTing JSON objects to the API endpoints w
 
 #### Output Format
 
-Response data for each and every Vedic Rishi Astro API will be encoded in JSON format.
+Response data for each and every Astrology API will be encoded in JSON format.
 
 #### Authentication
 
@@ -35,7 +35,7 @@ API key and userId will be mailed to you once you subscribe and activate your pl
 
 #### How to get latitude ,longitude and timezone ?
 
-For all the astrological calculcations and other reports generation (Except Numerology), Vedic Rishi APIs expect birth details which contain date of birth, time of birth, longitude of birth place, latitude of birth place and timezone of birth country. We know that getting latitude, longitude and timezone of all the places are difficult to get and therefore Vedic Rishi solves this problem by providing FREE APIs for getting the geo-details given city. These APIs are included in each and every plan you subscribe from VedicRishi. [Know More..](/docs/api-ref/geodetails)
+For all the astrological calculcations and other reports generation (Except Numerology), Astrology APIs expect birth details which contain date of birth, time of birth, longitude of birth place, latitude of birth place and timezone of birth country. We know that getting latitude, longitude and timezone of all the places are difficult to get and therefore Vedic Rishi solves this problem by providing FREE APIs for getting the geo-details given city. These APIs are included in each and every plan you subscribe from VedicRishi. [Know More..](/docs/api-ref/geodetails)
 
 #### Official API Clients
 
