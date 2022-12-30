@@ -1,16 +1,16 @@
 ##Astrology APIs
 
-Vedic Rishi does all the complex astronomical and algorithmic calculations for your astrology websites or astro-matching apps and provides you with simple APIs to create awesome user interfaces for your users
+AstrologyAPI does all the complex astronomical and algorithmic calculations for your astrology websites or astro-matching apps and provides you with simple APIs to create awesome user interfaces for your users
 
-#### Vedic Rishi REST Web Service Interface
+#### AstrologyAPI REST Web Service Interface
 
 Since the Astrology API is based on REST principles, it's very easy to write and test applications. You can use your browser to access URLs, and you can use pretty much any HTTP client in any programming language to interact with the API.
 
 #### API Endpoint
 
-All API URLs listed in this documentation are relative to **https://api.vedicrishiastro.com/v1**  
+All API URLs listed in this documentation are relative to **https://json.astrologyapi.com/v1**  
 For example - the /horo_chart/D1/ API call is reachable at-  
-<span class="text-info">https://api.vedicrishiastro.com/v1/horo_chart/D1/</span>
+<span class="text-info">https://json.astrologyapi.com/v1/horo_chart/D1/</span>
 
 #### RESTful
 
@@ -30,18 +30,18 @@ Response data for each and every Astrology API will be encoded in JSON format.
 
 #### Authentication
 
-Vedic Rishi authenticates the API access using header authentication, therefore every API call to Vedic Rishi must have authorisation header set as- _Authorization: Basic ("userId:APIKey")_  
+AstrologyAPI authenticates the API access using header authentication, therefore every API call to AstrologyAPI must have authorisation header set as- _Authorization: Basic ("userId:APIKey")_  
 API key and userId will be mailed to you once you subscribe and activate your plan.
 
 #### How to get latitude ,longitude and timezone ?
 
-For all the astrological calculcations and other reports generation (Except Numerology), Astrology APIs expect birth details which contain date of birth, time of birth, longitude of birth place, latitude of birth place and timezone of birth country. We know that getting latitude, longitude and timezone of all the places are difficult to get and therefore Vedic Rishi solves this problem by providing FREE APIs for getting the geo-details given city. These APIs are included in each and every plan you subscribe from VedicRishi. [Know More..](/docs/api-ref/geodetails)
+For all the astrological calculcations and other reports generation (Except Numerology), Astrology APIs expect birth details which contain date of birth, time of birth, longitude of birth place, latitude of birth place and timezone of birth country. We know that getting latitude, longitude and timezone of all the places are difficult to get and therefore AstrologyAPI solves this problem by providing FREE APIs for getting the geo-details given city. These APIs are included in each and every plan you subscribe from AstrologyAPI. [Know More..](/docs/api-ref/geodetails)
 
 #### Official API Clients
 
 We have an official github account which maintains the official API clients written in various languages.
 
-[Vedic Rishi Astro API PHP Client](https://github.com/chandantiwari/Vedic-Rishi-Astro-API-PHP-Client)
+[AstrologyAPI PHP Client](https://github.com/astrologyapi/astro-api-php-client)
 
 ##Advanced Panchang
 
@@ -52,18 +52,18 @@ This is the extension of basic panchang which provides various yog such as dwi-p
 **1\. Panchang at specified date and time**
 Here, following APIs are used and date and time along with latitude, longitude and timezone are expected -
 
-*   [1\. basic_panchang](#-basic-panchang/basic_panchang)
-*   [2\. planet_panchang](#-basic-panchang/planet_panchang)
-*   [3\. advanced_panchang](#-advanced-panchang/advanced_panchang)
+- [1\. basic_panchang](#-basic-panchang/basic_panchang)
+- [2\. planet_panchang](#-basic-panchang/planet_panchang)
+- [3\. advanced_panchang](#-advanced-panchang/advanced_panchang)
 
 **2\. Panchang at Sunsrise for given day**
 Following APIs should be used for getting the panchang data points at the time of sunrise which are used by traditional calendars-
 
-*   [1\. basic_panchang/sunrise](#-basic-panchang/basic_panchang/sunrise)
-*   [2\. planet_panchang/sunrise](#-basic-panchang/planet_panchang/sunrise)
-*   [2\. advanced_panchang/sunrise](#-advanced-panchang/advanced_panchang/sunrise)
-*   [4\. chaughadiya_muhurta](#-advanced-panchang/chaughadiya_muhurta)
-*   [5\. hora_muhurta](#-advanced-panchang/hora_muhurta)
+- [1\. basic_panchang/sunrise](#-basic-panchang/basic_panchang/sunrise)
+- [2\. planet_panchang/sunrise](#-basic-panchang/planet_panchang/sunrise)
+- [2\. advanced_panchang/sunrise](#-advanced-panchang/advanced_panchang/sunrise)
+- [4\. chaughadiya_muhurta](#-advanced-panchang/chaughadiya_muhurta)
+- [5\. hora_muhurta](#-advanced-panchang/hora_muhurta)
 
 **" Here only date along with latitude, longitude and timezone are expected to be passed. No time is required. "**
 
@@ -77,26 +77,27 @@ advanced_panchang
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/advanced_panchang |
-
-
+| Method | Full URL                                           |
+| ------ | -------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/advanced_panchang |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| hour | int | Panchang hour, eg:12 |
-| min | int | Panchang minute, eg:34 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| hour   | int       | Panchang hour, eg:12                 |
+| min    | int       | Panchang minute, eg:34               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "day": "Wednesday",
@@ -208,22 +209,25 @@ advanced_panchang/sunrise
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/advanced_panchang/sunrise |
+| Method | Full URL                                                   |
+| ------ | ---------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/advanced_panchang/sunrise |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "day": "Wednesday",
@@ -335,22 +339,25 @@ chaughadiya_muhurta
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/chaughadiya_muhurta |
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/chaughadiya_muhurta |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Chaughadiya day, eg: 10 |
-| month     | int      |   Chaughadiya month, eg:5 |
-| year | int      |    Chaughadiya year, eg:2015 |
-| lat | float | Chaughadiya place latitude, eg: 19.234|
-| lon | float | Chaughadiya place longitude, eg: 72.843|
-| tzone | float | Chaughadiya place timezone, eg: 5.5|
+| Params | Data type | Descriptions                            |
+| ------ | :-------- | :-------------------------------------- |
+| day    | int       | Chaughadiya day, eg: 10                 |
+| month  | int       | Chaughadiya month, eg:5                 |
+| year   | int       | Chaughadiya year, eg:2015               |
+| lat    | float     | Chaughadiya place latitude, eg: 19.234  |
+| lon    | float     | Chaughadiya place longitude, eg: 72.843 |
+| tzone  | float     | Chaughadiya place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "chaughadiya": {
@@ -426,6 +433,7 @@ chaughadiya_muhurta
 }
 
 ```
+
 ### hora_muhurta
 
 Provides day and night hora data.
@@ -436,22 +444,25 @@ hora_muhurta
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/chaughadiya_muhurta |
+| Method | Full URL                                      |
+| ------ | --------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/hora_muhurta |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Hora day, eg: 10 |
-| month     | int      |   Hora month, eg:5 |
-| year | int      |    Hora year, eg:2015 |
-| lat | float | Hora place latitude, eg: 19.234|
-| lon | float | Hora place longitude, eg: 72.843|
-| tzone | float | Hora place timezone, eg: 5.5|
+| Params | Data type | Descriptions                     |
+| ------ | :-------- | :------------------------------- |
+| day    | int       | Hora day, eg: 10                 |
+| month  | int       | Hora month, eg:5                 |
+| year   | int       | Hora year, eg:2015               |
+| lat    | float     | Hora place latitude, eg: 19.234  |
+| lon    | float     | Hora place longitude, eg: 72.843 |
+| tzone  | float     | Hora place timezone, eg: 5.5     |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "hora": {
@@ -569,36 +580,41 @@ Provide details of Bhinnashtak varga And Servashtak Varga.
 Provides astakvarga chart points and table points.
 
 #### API Endpoint
+
 planet_ashtak/:planet_name
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planet_ashtak/:planet_name |
+| Method | Full URL                                                    |
+| ------ | ----------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/planet_ashtak/:planet_name |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
 #### Planet Name
+
 Here planet name means for which planet you want data.
->Planet name's are as follow:- 
->sun, moon, mars, mercury, jupiter, venus, saturn , ascendant
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+> Planet name's are as follow:-
+> sun, moon, mars, mercury, jupiter, venus, saturn , ascendant
 
-``` javascript
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
+```javascript
 {
   "ashtak_varga": {
     "type": "Bhinnashtak",
@@ -749,31 +765,34 @@ Here planet name means for which planet you want data.
 Provides sarvashtak varga chart points and table points.
 
 #### API Endpoint
+
 sarvashtak
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sarvashtak |
+| Method | Full URL                                    |
+| ------ | ------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sarvashtak |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-``` javascript
+#### Response Data
+
+```javascript
 {
   "ashtak_varga": {
     "type": "Sarvashtak"
@@ -916,35 +935,41 @@ sarvashtak
 ```
 
 ## Basic Astro
+
 This package contains basic astrological details. Planetary configurations such as full degrees, normalised degrees, house position , nakshatra name, house lord and other details.
 
 ### birth_details
+
 Along with birth details it provides sunrise, sunset, ayanamsha.
 
 #### API Endpoint
+
 birth_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/birth_details |
+| Method | Full URL                                       |
+| ------ | ---------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/birth_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "year": 1992,
@@ -962,32 +987,37 @@ birth_details
 ```
 
 ### astro_details
+
 Provides the complete avakahada details e.g. nakshtatra, charan, tithe, karan, yog ,varna, vashaya
 
 #### API Endpoint
+
 astro_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/astro_details |
+| Method | Full URL                                       |
+| ------ | ---------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/astro_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "Varna": "Kshatriya",
@@ -1011,32 +1041,37 @@ astro_details
 ```
 
 ### planets
+
 Full planetary positions including ascendant along with retrograde status and nakshatra, house, sign
 
 #### API Endpoint
+
 planets
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planets |
+| Method | Full URL                                 |
+| ------ | ---------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/planets |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -1173,32 +1208,37 @@ planets
 ```
 
 ### planets/extended
+
 Full planetary positions including ascendant along with,neptune,pluto,uranus, retrograde status and nakshatra, house, sign
 
 #### API Endpoint
+
 planets/extended
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planets/extended |
+| Method | Full URL                                          |
+| ------ | ------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/planets/extended |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -1373,34 +1413,38 @@ planets/extended
 ]
 ```
 
-
 ### planets/tropical
+
 Full planetary positions including ascendant along with,neptune,pluto,uranus, retrograde status and nakshatra, house, sign
 
 #### API Endpoint
+
 planets/tropical
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planets/tropical |
+| Method | Full URL                                          |
+| ------ | ------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/planets/tropical |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -1504,33 +1548,39 @@ planets/tropical
   }
 ]
 ```
+
 ### bhav_madhya
+
 Provide chalit table.
 
 #### API Endpoint
+
 bhav_madhya
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/bhav_madhya |
+| Method | Full URL                                     |
+| ------ | -------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/bhav_madhya |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "ascendant": 236.60716263691694,
@@ -1640,35 +1690,41 @@ bhav_madhya
 ```
 
 ## Basic Char Dasha
+
 Get the sequence of all Char Dasha
 
 ### major_chardasha
+
 Get the complete Major Char Dasha periods along with start and end dates for the given birth detail.
 
 #### API Endpoint
+
 major_chardasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/major_chardasha |
+| Method | Full URL                                         |
+| ------ | ------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/major_chardasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -1759,32 +1815,37 @@ major_chardasha
 ```
 
 ### current_chardasha
+
 Returns the currently undergoing Char Dasha. It provides Major Period, Sub Period and Complete sub-sub period for the current date.
 
 #### API Endpoint
+
 current_chardasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/current_chardasha |
+| Method | Full URL                                           |
+| ------ | -------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/current_chardasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "dasha_date": "30-6-2016",
@@ -1812,32 +1873,37 @@ current_chardasha
 ```
 
 ### sub_chardasha/:sign_name
+
 Get all the sub periods of char dasha for the given major period rashi name in the API variable
 
 #### API Endpoint
+
 sub_chardasha/:sign_name
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_chardasha/:sign_name |
+| Method | Full URL                                                  |
+| ------ | --------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sub_chardasha/:sign_name |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json{
   "major_dasha": {
     "sign_id": 0,
@@ -1948,32 +2014,37 @@ sub_chardasha/:sign_name
 ```
 
 ### sub_chardasha/:majorSign/:subSign
+
 Get all the sub periods of char dasha for the given major period rashi name in the API variable
 
 #### API Endpoint
+
 sub_chardasha/:majorSign/:subSign
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_chardasha/:majorSign/:subSign |
+| Method | Full URL                                                           |
+| ------ | ------------------------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/sub_chardasha/:majorSign/:subSign |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "major_dasha": {
@@ -2089,41 +2160,44 @@ sub_chardasha/:majorSign/:subSign
     }
   ]
 }
-
 ```
 
-
 ## Basic Gemstone Suggestions
+
 Provides report of Gems and Remedies with Life Stone, Lucky Stone, Benefic Stone, Stone details as per Vimsottari Mahadasha period.
 
 ### basic_gem_suggestion
+
 This api recommends life stone,lucky stone,benefic stone.
 
-
 #### API Endpoint
+
 basic_gem_suggestion
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/basic_gem_suggestion|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/basic_gem_suggestion |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "LIFE": {
@@ -2154,34 +2228,39 @@ basic_gem_suggestion
     "gem_deity": "Mercury"
   }
 }
-
 ```
 
 ## Basic Numerology
+
 Provides detailed Numerology report.
 
 ### numero_table
+
 Provides detailed Numerology report.
 
 #### API Endpoint
+
 numero_table
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_table|
+| Method | Full URL                                      |
+| ------ | --------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_table |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "name": "Ajeet Kanojia",
@@ -2202,10 +2281,10 @@ numero_table
   "radical_num": "6",
   "radical_ruler": "Venus"
 }
-
 ```
 
 ## Basic Panchang
+
 The package consists of the five panchang elements which are day, nakshatra, yog, karan and tithi along with sunrise and sunset timings. This also includes chaugadiya and planetary degrees at that point of time.
 
 #### We have two types of Panchang APIs
@@ -2213,18 +2292,18 @@ The package consists of the five panchang elements which are day, nakshatra, yog
 **1\. Panchang at specified date and time**
 Here, following APIs are used and date and time along with latitude, longitude and timezone are expected -
 
-*   [1\. basic_panchang](#-basic-panchang/basic_panchang)
-*   [2\. planet_panchang](#-basic-panchang/planet_panchang)
-*   [3\. advanced_panchang](#-advanced-panchang/advanced_panchang)
+- [1\. basic_panchang](#-basic-panchang/basic_panchang)
+- [2\. planet_panchang](#-basic-panchang/planet_panchang)
+- [3\. advanced_panchang](#-advanced-panchang/advanced_panchang)
 
 **2\. Panchang at Sunsrise for given day**
 Following APIs should be used for getting the panchang data points at the time of sunrise which are used by traditional calendars-
 
-*   [1\. basic_panchang/sunrise](#-basic-panchang/basic_panchang/sunrise)
-*   [2\. planet_panchang/sunrise](#-basic-panchang/planet_panchang/sunrise)
-*   [2\. advanced_panchang/sunrise](#-advanced-panchang/advanced_panchang/sunrise)
-*   [4\. chaughadiya_muhurta](#-advanced-panchang/chaughadiya_muhurta)
-*   [5\. hora_muhurta](#-advanced-panchang/hora_muhurta)
+- [1\. basic_panchang/sunrise](#-basic-panchang/basic_panchang/sunrise)
+- [2\. planet_panchang/sunrise](#-basic-panchang/planet_panchang/sunrise)
+- [2\. advanced_panchang/sunrise](#-advanced-panchang/advanced_panchang/sunrise)
+- [4\. chaughadiya_muhurta](#-advanced-panchang/chaughadiya_muhurta)
+- [5\. hora_muhurta](#-advanced-panchang/hora_muhurta)
 
 **" Here only date along with latitude, longitude and timezone are expected to be passed. No time is required. "**
 
@@ -2238,24 +2317,27 @@ basic_panchang
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/basic_panchang |
+| Method | Full URL                                        |
+| ------ | ----------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/basic_panchang |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| hour | int | Panchang hour, eg:12 |
-| min | int | Panchang minute, eg:34 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| hour   | int       | Panchang hour, eg:12                 |
+| min    | int       | Panchang minute, eg:34               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "day": "Wednesday",
@@ -2279,24 +2361,27 @@ basic_panchang/sunrise
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/basic_panchang/sunrise |
+| Method | Full URL                                                |
+| ------ | ------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/basic_panchang/sunrise |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| hour | int | Panchang hour, eg:12 |
-| min | int | Panchang minute, eg:34 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| hour   | int       | Panchang hour, eg:12                 |
+| min    | int       | Panchang minute, eg:34               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 {
   "day": "Wednesday",
@@ -2320,138 +2405,140 @@ planet_panchang
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planet_panchang |
+| Method | Full URL                                         |
+| ------ | ------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/planet_panchang |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| hour | int | Panchang hour, eg:12 |
-| min | int | Panchang minute, eg:34 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| hour   | int       | Panchang hour, eg:12                 |
+| min    | int       | Panchang minute, eg:34               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 [
   {
-    "id": 0,
-    "name": "Sun",
-    "fullDegree": 312.30400347269256,
-    "normDegree": 12.304003472692557,
-    "isRetro": "false",
-    "sign": "Aquarius",
-    "sign_lord": "Saturn",
-    "nakshatra": "Shatbhisha",
-    "nakshatra_lord": "Rahu"
+    id: 0,
+    name: "Sun",
+    fullDegree: 312.30400347269256,
+    normDegree: 12.304003472692557,
+    isRetro: "false",
+    sign: "Aquarius",
+    sign_lord: "Saturn",
+    nakshatra: "Shatbhisha",
+    nakshatra_lord: "Rahu",
   },
   {
-    "id": 1,
-    "name": "Moon",
-    "fullDegree": 37.45112477913563,
-    "normDegree": 7.4511247791356325,
-    "isRetro": "false",
-    "sign": "Taurus",
-    "sign_lord": "Venus",
-    "nakshatra": "Krittika",
-    "nakshatra_lord": "Sun"
+    id: 1,
+    name: "Moon",
+    fullDegree: 37.45112477913563,
+    normDegree: 7.4511247791356325,
+    isRetro: "false",
+    sign: "Taurus",
+    sign_lord: "Venus",
+    nakshatra: "Krittika",
+    nakshatra_lord: "Sun",
   },
   {
-    "id": 2,
-    "name": "Mars",
-    "fullDegree": 340.0086052768496,
-    "normDegree": 10.008605276849607,
-    "isRetro": "false",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Uttra Bhadrapad",
-    "nakshatra_lord": "Saturn"
+    id: 2,
+    name: "Mars",
+    fullDegree: 340.0086052768496,
+    normDegree: 10.008605276849607,
+    isRetro: "false",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Uttra Bhadrapad",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 3,
-    "name": "Mercury",
-    "fullDegree": 285.56691716258143,
-    "normDegree": 15.566917162581433,
-    "isRetro": "false",
-    "sign": "Capricorn",
-    "sign_lord": "Saturn",
-    "nakshatra": "Shravan",
-    "nakshatra_lord": "Moon"
+    id: 3,
+    name: "Mercury",
+    fullDegree: 285.56691716258143,
+    normDegree: 15.566917162581433,
+    isRetro: "false",
+    sign: "Capricorn",
+    sign_lord: "Saturn",
+    nakshatra: "Shravan",
+    nakshatra_lord: "Moon",
   },
   {
-    "id": 4,
-    "name": "Jupiter",
-    "fullDegree": 111.19916911928078,
-    "normDegree": 21.199169119280782,
-    "isRetro": "true",
-    "sign": "Cancer",
-    "sign_lord": "Moon",
-    "nakshatra": "Ashlesha",
-    "nakshatra_lord": "Mercury"
+    id: 4,
+    name: "Jupiter",
+    fullDegree: 111.19916911928078,
+    normDegree: 21.199169119280782,
+    isRetro: "true",
+    sign: "Cancer",
+    sign_lord: "Moon",
+    nakshatra: "Ashlesha",
+    nakshatra_lord: "Mercury",
   },
   {
-    "id": 5,
-    "name": "Venus",
-    "fullDegree": 341.4409638339589,
-    "normDegree": 11.440963833958904,
-    "isRetro": "false",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Uttra Bhadrapad",
-    "nakshatra_lord": "Saturn"
+    id: 5,
+    name: "Venus",
+    fullDegree: 341.4409638339589,
+    normDegree: 11.440963833958904,
+    isRetro: "false",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Uttra Bhadrapad",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 6,
-    "name": "Saturn",
-    "fullDegree": 220.60759834888617,
-    "normDegree": 10.607598348886171,
-    "isRetro": "false",
-    "sign": "Scorpio",
-    "sign_lord": "Mars",
-    "nakshatra": "Anuradha",
-    "nakshatra_lord": "Saturn"
+    id: 6,
+    name: "Saturn",
+    fullDegree: 220.60759834888617,
+    normDegree: 10.607598348886171,
+    isRetro: "false",
+    sign: "Scorpio",
+    sign_lord: "Mars",
+    nakshatra: "Anuradha",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 7,
-    "name": "Rahu",
-    "fullDegree": 167.93931821066,
-    "normDegree": 17.93931821065999,
-    "isRetro": "true",
-    "sign": "Virgo",
-    "sign_lord": "Mercury",
-    "nakshatra": "Hast",
-    "nakshatra_lord": "Moon"
+    id: 7,
+    name: "Rahu",
+    fullDegree: 167.93931821066,
+    normDegree: 17.93931821065999,
+    isRetro: "true",
+    sign: "Virgo",
+    sign_lord: "Mercury",
+    nakshatra: "Hast",
+    nakshatra_lord: "Moon",
   },
   {
-    "id": 8,
-    "name": "Ketu",
-    "fullDegree": 347.93931821065996,
-    "normDegree": 17.939318210659962,
-    "isRetro": "true",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Revati",
-    "nakshatra_lord": "Mercury"
+    id: 8,
+    name: "Ketu",
+    fullDegree: 347.93931821065996,
+    normDegree: 17.939318210659962,
+    isRetro: "true",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Revati",
+    nakshatra_lord: "Mercury",
   },
   {
-    "id": 9,
-    "name": "Asc",
-    "fullDegree": 57.565378655311946,
-    "normDegree": 27.565378655311946,
-    "isRetro": false,
-    "sign": "Taurus",
-    "sign_lord": "Venus",
-    "nakshatra": "Mrigshira",
-    "nakshatra_lord": "Mars"
-  }
-]
-
+    id: 9,
+    name: "Asc",
+    fullDegree: 57.565378655311946,
+    normDegree: 27.565378655311946,
+    isRetro: false,
+    sign: "Taurus",
+    sign_lord: "Venus",
+    nakshatra: "Mrigshira",
+    nakshatra_lord: "Mars",
+  },
+];
 ```
 
 ### planet_panchang/sunrise
@@ -2464,170 +2551,178 @@ planet_panchang/sunrise
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/planet_panchang/sunrise |
+| Method | Full URL                                                 |
+| ------ | -------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/planet_panchang/sunrise |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| hour | int | Panchang hour, eg:12 |
-| min | int | Panchang minute, eg:34 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| hour   | int       | Panchang hour, eg:12                 |
+| min    | int       | Panchang minute, eg:34               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```javascript
 [
   {
-    "id": 0,
-    "name": "Sun",
-    "fullDegree": 312.30400347269256,
-    "normDegree": 12.304003472692557,
-    "isRetro": "false",
-    "sign": "Aquarius",
-    "sign_lord": "Saturn",
-    "nakshatra": "Shatbhisha",
-    "nakshatra_lord": "Rahu"
+    id: 0,
+    name: "Sun",
+    fullDegree: 312.30400347269256,
+    normDegree: 12.304003472692557,
+    isRetro: "false",
+    sign: "Aquarius",
+    sign_lord: "Saturn",
+    nakshatra: "Shatbhisha",
+    nakshatra_lord: "Rahu",
   },
   {
-    "id": 1,
-    "name": "Moon",
-    "fullDegree": 37.45112477913563,
-    "normDegree": 7.4511247791356325,
-    "isRetro": "false",
-    "sign": "Taurus",
-    "sign_lord": "Venus",
-    "nakshatra": "Krittika",
-    "nakshatra_lord": "Sun"
+    id: 1,
+    name: "Moon",
+    fullDegree: 37.45112477913563,
+    normDegree: 7.4511247791356325,
+    isRetro: "false",
+    sign: "Taurus",
+    sign_lord: "Venus",
+    nakshatra: "Krittika",
+    nakshatra_lord: "Sun",
   },
   {
-    "id": 2,
-    "name": "Mars",
-    "fullDegree": 340.0086052768496,
-    "normDegree": 10.008605276849607,
-    "isRetro": "false",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Uttra Bhadrapad",
-    "nakshatra_lord": "Saturn"
+    id: 2,
+    name: "Mars",
+    fullDegree: 340.0086052768496,
+    normDegree: 10.008605276849607,
+    isRetro: "false",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Uttra Bhadrapad",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 3,
-    "name": "Mercury",
-    "fullDegree": 285.56691716258143,
-    "normDegree": 15.566917162581433,
-    "isRetro": "false",
-    "sign": "Capricorn",
-    "sign_lord": "Saturn",
-    "nakshatra": "Shravan",
-    "nakshatra_lord": "Moon"
+    id: 3,
+    name: "Mercury",
+    fullDegree: 285.56691716258143,
+    normDegree: 15.566917162581433,
+    isRetro: "false",
+    sign: "Capricorn",
+    sign_lord: "Saturn",
+    nakshatra: "Shravan",
+    nakshatra_lord: "Moon",
   },
   {
-    "id": 4,
-    "name": "Jupiter",
-    "fullDegree": 111.19916911928078,
-    "normDegree": 21.199169119280782,
-    "isRetro": "true",
-    "sign": "Cancer",
-    "sign_lord": "Moon",
-    "nakshatra": "Ashlesha",
-    "nakshatra_lord": "Mercury"
+    id: 4,
+    name: "Jupiter",
+    fullDegree: 111.19916911928078,
+    normDegree: 21.199169119280782,
+    isRetro: "true",
+    sign: "Cancer",
+    sign_lord: "Moon",
+    nakshatra: "Ashlesha",
+    nakshatra_lord: "Mercury",
   },
   {
-    "id": 5,
-    "name": "Venus",
-    "fullDegree": 341.4409638339589,
-    "normDegree": 11.440963833958904,
-    "isRetro": "false",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Uttra Bhadrapad",
-    "nakshatra_lord": "Saturn"
+    id: 5,
+    name: "Venus",
+    fullDegree: 341.4409638339589,
+    normDegree: 11.440963833958904,
+    isRetro: "false",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Uttra Bhadrapad",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 6,
-    "name": "Saturn",
-    "fullDegree": 220.60759834888617,
-    "normDegree": 10.607598348886171,
-    "isRetro": "false",
-    "sign": "Scorpio",
-    "sign_lord": "Mars",
-    "nakshatra": "Anuradha",
-    "nakshatra_lord": "Saturn"
+    id: 6,
+    name: "Saturn",
+    fullDegree: 220.60759834888617,
+    normDegree: 10.607598348886171,
+    isRetro: "false",
+    sign: "Scorpio",
+    sign_lord: "Mars",
+    nakshatra: "Anuradha",
+    nakshatra_lord: "Saturn",
   },
   {
-    "id": 7,
-    "name": "Rahu",
-    "fullDegree": 167.93931821066,
-    "normDegree": 17.93931821065999,
-    "isRetro": "true",
-    "sign": "Virgo",
-    "sign_lord": "Mercury",
-    "nakshatra": "Hast",
-    "nakshatra_lord": "Moon"
+    id: 7,
+    name: "Rahu",
+    fullDegree: 167.93931821066,
+    normDegree: 17.93931821065999,
+    isRetro: "true",
+    sign: "Virgo",
+    sign_lord: "Mercury",
+    nakshatra: "Hast",
+    nakshatra_lord: "Moon",
   },
   {
-    "id": 8,
-    "name": "Ketu",
-    "fullDegree": 347.93931821065996,
-    "normDegree": 17.939318210659962,
-    "isRetro": "true",
-    "sign": "Pisces",
-    "sign_lord": "Jupiter",
-    "nakshatra": "Revati",
-    "nakshatra_lord": "Mercury"
+    id: 8,
+    name: "Ketu",
+    fullDegree: 347.93931821065996,
+    normDegree: 17.939318210659962,
+    isRetro: "true",
+    sign: "Pisces",
+    sign_lord: "Jupiter",
+    nakshatra: "Revati",
+    nakshatra_lord: "Mercury",
   },
   {
-    "id": 9,
-    "name": "Asc",
-    "fullDegree": 57.565378655311946,
-    "normDegree": 27.565378655311946,
-    "isRetro": false,
-    "sign": "Taurus",
-    "sign_lord": "Venus",
-    "nakshatra": "Mrigshira",
-    "nakshatra_lord": "Mars"
-  }
-]
-
+    id: 9,
+    name: "Asc",
+    fullDegree: 57.565378655311946,
+    normDegree: 27.565378655311946,
+    isRetro: false,
+    sign: "Taurus",
+    sign_lord: "Venus",
+    nakshatra: "Mrigshira",
+    nakshatra_lord: "Mars",
+  },
+];
 ```
 
 ## Basic Vimshottari Dasha
+
 Get analysis of precise period of events to come.
 
 ### current_vdasha
+
 Provides details of current vimshottari dasha
 
 #### API Endpoint
+
 current_vdasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/current_vdasha |
+| Method | Full URL                                        |
+| ------ | ----------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/current_vdasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "major": {
@@ -2659,32 +2754,37 @@ current_vdasha
 ```
 
 ### current_vdasha_all
+
 Provides details of All Level of current vimshottari dasha
 
 #### API Endpoint
+
 current_vdasha_all
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/current_vdasha_all |
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/current_vdasha_all |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "major": {
@@ -2953,34 +3053,38 @@ current_vdasha_all
 }
 ```
 
-
 ### major_vdasha
+
 Provides details of Major vimshottari dasha
 
 #### API Endpoint
+
 major_vdasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/major_vdasha |
+| Method | Full URL                                      |
+| ------ | --------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/major_vdasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3032,32 +3136,37 @@ major_vdasha
 ```
 
 ### major_vdasha
+
 Provides details of Major vimshottari dasha
 
 #### API Endpoint
+
 major_vdasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/major_vdasha |
+| Method | Full URL                                      |
+| ------ | --------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/major_vdasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3109,32 +3218,37 @@ major_vdasha
 ```
 
 ### sub_vdasha/:mahaDashaLord
+
 Provide antardasha details
 
 #### API Endpoint
+
 sub_vdasha/:mahaDashaLord
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_vdasha/:mahaDashaLord |
+| Method | Full URL                                                   |
+| ------ | ---------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sub_vdasha/:mahaDashaLord |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3186,32 +3300,37 @@ sub_vdasha/:mahaDashaLord
 ```
 
 ### sub_sub_vdasha/:mahaDashaLord/:antarDashaLord
+
 Provide pratyantar dasha details
 
 #### API Endpoint
+
 sub_sub_vdasha/:mahaDashaLord/:antarDashaLord
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_sub_vdasha/:mahaDashaLord/:antarDashaLord |
+| Method | Full URL                                                                       |
+| ------ | ------------------------------------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/sub_sub_vdasha/:mahaDashaLord/:antarDashaLord |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3263,32 +3382,37 @@ sub_sub_vdasha/:mahaDashaLord/:antarDashaLord
 ```
 
 ### sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord
+
 Provide sookshma dasha details
 
 #### API Endpoint
+
 sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord|
+| Method | Full URL                                                                                                |
+| ------ | ------------------------------------------------------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3340,32 +3464,37 @@ sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord
 ```
 
 ### sub_sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord/:sookshmDashaLord
+
 Provide pran dasha details
 
 #### API Endpoint
+
 sub_sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord/:sookshmDashaLord
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord/:sookshmDashaLord|
+| Method | Full URL                                                                                                                      |
+| ------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sub_sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord/:sookshmDashaLord |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3417,35 +3546,41 @@ sub_sub_sub_sub_vdasha/:mahaDashaLord/:antarDashaLord/:pratyantarDashaLord/:sook
 ```
 
 ## Basic Yogini Dasha
+
 Get sequence of all eight yogini dasha, their lords and dasha periods.
 
 ### major_yogini_dasha
+
 Gives a list of Major yogini dasha for two cycles
 
 #### API Endpoint
+
 major_yogini_dasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/major_yogini_dasha|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/major_yogini_dasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -3596,32 +3731,37 @@ major_yogini_dasha
 ```
 
 ### sub_yogini_dasha
+
 Get all the yogini dasha for both the major yogini dasha cycle. Sub Yogini dasha for 72 Years.
 
 #### API Endpoint
+
 sub_yogini_dasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sub_yogini_dasha|
+| Method | Full URL                                          |
+| ------ | ------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sub_yogini_dasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 [
   {
@@ -4860,32 +5000,37 @@ sub_yogini_dasha
 ```
 
 ### current_yogini_dasha
+
 Get the currently undergoing Yogini Dasha upto three levels viz. Major, Sub and Sub-Sub.
 
 #### API Endpoint
+
 current_yogini_dasha
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/current_yogini_dasha|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/current_yogini_dasha |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "major_dasha": {
@@ -4911,35 +5056,41 @@ current_yogini_dasha
 ```
 
 ## Beginner
+
 Create free kundali on your own way absolutly free.
 
 ### basic_astro
+
 Provides the complete avakahada details e.g. nakshtatra, charan, tithe, karan, yog ,varna, vashaya etc.
 
 #### API Endpoint
+
 basic_astro
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/basic_astro|
+| Method | Full URL                                     |
+| ------ | -------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/basic_astro |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "Varna": "Vaishya",
@@ -4955,32 +5106,37 @@ basic_astro
 ```
 
 ### birth_details
+
 Provide basic birth details of the given birth data.
 
 #### API Endpoint
+
 birth_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/birth_details|
+| Method | Full URL                                       |
+| ------ | ---------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/birth_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "year": 2016,
@@ -4998,27 +5154,32 @@ birth_details
 ```
 
 ### numero_table
+
 Provides detailed Numerology report.
 
 #### API Endpoint
+
 numero_table
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_table|
+| Method | Full URL                                      |
+| ------ | --------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_table |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | string | Your full name, eg: Ajeet kanojia|
+| Params | Data type | Descriptions                      |
+| ------ | :-------- | :-------------------------------- |
+| day    | int       | Birth day, eg: 10                 |
+| month  | int       | Birth month, eg:5                 |
+| year   | int       | Birth year, eg:2015               |
+| name   | string    | Your full name, eg: Ajeet kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "name": "Ajeet kanojia",
@@ -5042,29 +5203,34 @@ numero_table
 ```
 
 ### basic_panchang
+
 Provides data points for panchang elements, chaugadiya and sunrise and set timings
 
 #### API Endpoint
+
 basic_panchang
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/basic_panchang|
+| Method | Full URL                                        |
+| ------ | ----------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/basic_panchang |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Panchang day, eg: 10 |
-| month     | int      |   Panchang month, eg:5 |
-| year | int      |    Panchang year, eg:2015 |
-| lat | float | Panchang place latitude, eg: 19.234|
-| lon | float | Panchang place longitude, eg: 72.843|
-| tzone | float | Panchang place timezone, eg: 5.5|
+| Params | Data type | Descriptions                         |
+| ------ | :-------- | :----------------------------------- |
+| day    | int       | Panchang day, eg: 10                 |
+| month  | int       | Panchang month, eg:5                 |
+| year   | int       | Panchang year, eg:2015               |
+| lat    | float     | Panchang place latitude, eg: 19.234  |
+| lon    | float     | Panchang place longitude, eg: 72.843 |
+| tzone  | float     | Panchang place timezone, eg: 5.5     |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "day": "Tuesday",
@@ -5078,35 +5244,41 @@ basic_panchang
 ```
 
 ## Biorhythm
+
 This package provides you biorhythms charts points,trends and biorhythms details.
 
 ### biorhythm
+
 Get biorhythmic details.
 
 #### API Endpoint
+
 biorhythm
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/biorhythm|
+| Method | Full URL                                   |
+| ------ | ------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/biorhythm |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "physical": {
@@ -5129,35 +5301,41 @@ biorhythm
 ```
 
 ## Daily Nakshatra Prediction
+
 Provides you daily nakshatra prediction.
 
 ### daily_nakshatra_prediction
+
 Gives you your daily nakshatra prediction.
 
 #### API Endpoint
+
 daily_nakshatra_prediction
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/daily_nakshatra_prediction|
+| Method | Full URL                                                    |
+| ------ | ----------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/daily_nakshatra_prediction |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "birth_moon_sign": "Virgo",
@@ -5173,39 +5351,45 @@ daily_nakshatra_prediction
 ```
 
 ## General Reports
+
 Calculates general reports and predictions like, house report ,rashi report ,nakshatra report, ascendent report etc.
 
 ### general_house_report/:planet_name
+
 Calculates complete general house reports.
 
 #### API Endpoint
+
 general_house_report/:planet_name
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/general_house_report/:planet_name|
+| Method | Full URL                                                           |
+| ------ | ------------------------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/general_house_report/:planet_name |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
-#### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
->Here planet name means for which planet you want data.
->Planet name's are as follow-
->sun, moon, mars, mercury, jupiter, venus, saturn
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+
+> Here planet name means for which planet you want data.
+> Planet name's are as follow-
+> sun, moon, mars, mercury, jupiter, venus, saturn
+
+#### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+
 ```json
 {
   "planet": "sun",
@@ -5218,37 +5402,45 @@ general_house_report/:planet_name
 ```
 
 ### general_rashi_report/:planet_name
+
 Calculates complete general sign reports.
 
 #### API Endpoint
+
 general_rashi_report/:planet_name
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/general_house_report/:planet_name|
+| Method | Full URL                                                           |
+| ------ | ------------------------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/general_rashi_report/:planet_name |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
->Here planet name means for which planet you want data.
->Planet name's are as follow-
->moon, mars, mercury, jupiter, venus, saturn
+<!-- #### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Planet Name
+
+> Here planet name means for which planet you want data.
+> Planet name's are as follow-
+> moon, mars, mercury, jupiter, venus, saturn
+
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "planet": "sun",
@@ -5265,32 +5457,37 @@ general_rashi_report/:planet_name
 ```
 
 ### general_nakshatra_report
+
 Calculates complete general nakshatra reports
 
 #### API Endpoint
+
 general_nakshatra_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/general_nakshatra_report|
+| Method | Full URL                                                  |
+| ------ | --------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/general_nakshatra_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "nak_report": {
@@ -5323,32 +5520,37 @@ general_nakshatra_report
 ```
 
 ### general_ascendant_report
+
 Calculates complete general ascendant reports.
 
 #### API Endpoint
+
 general_ascendant_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/general_ascendant_report|
+| Method | Full URL                                                  |
+| ------ | --------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/general_ascendant_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
    "asc_report": {
@@ -5370,29 +5572,36 @@ general_ascendant_report
    }
  }
 ```
+
 ## Geo Details
+
 Provide latitude and logitude of the given place.
 
 ### geo_details
+
 Calculates complete general ascendant reports.
 
 #### API Endpoint
+
 geo_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/geo_details|
+| Method | Full URL                                     |
+| ------ | -------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/geo_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| place      | string | place , eg: 'mumbai'|
-| maxRows     | int      |  number of result at time, eg: 6 |
+| Params  | Data type | Descriptions                    |
+| ------- | :-------- | :------------------------------ |
+| place   | string    | place , eg: 'mumbai'            |
+| maxRows | int       | number of result at time, eg: 6 |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "geonames": [
@@ -5415,25 +5624,30 @@ geo_details
 ```
 
 ### timezone
+
 Return a time zone of the given place.
 
 #### API Endpoint
+
 timezone
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/timezone|
+| Method | Full URL                                  |
+| ------ | ----------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/timezone |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| country_code      | string | time zone id , get from geo_details api|
-| isDst     | boolean      |  is for dst , eg: true or false|
+| Params       | Data type | Descriptions                            |
+| ------------ | :-------- | :-------------------------------------- |
+| country_code | string    | time zone id , get from geo_details api |
+| isDst        | boolean   | is for dst , eg: true or false          |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "timezone": "5.5"
@@ -5441,35 +5655,39 @@ timezone
 ```
 
 ## Horoscope Chart
+
 This package provides data points to create horoscope charts or kundali in whichever type you want (North, south, bengali or oriya).
 
 ### horo_chart/:chart_id
+
 based on chart type(all D-charts) - The data points include various planetary positions along with ascendant and their respective house positions to draw charts.
 
 #### API Endpoint
+
 horo_chart/:chart_id
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/horo_chart/:chart_id|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/horo_chart/:chart_id |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
 chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+
 > chart_id means the type of chart for which you want data.For example:-
 > chalit : For Chalit Chart,
 > SUN : For Sun Chart,
@@ -5494,16 +5712,16 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
 > D60 : For Shashtymsha Chart,
 > chalit : For Chalit Chart
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 [
   {
     "sign": 6,
     "sign_name": "Virgo",
-    "planet": [
-      "RAHU"
-    ]
+    "planet": ["RAHU"]
   },
   {
     "sign": 7,
@@ -5513,10 +5731,7 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   {
     "sign": 8,
     "sign_name": "Scorpio",
-    "planet": [
-      "MOON",
-      "SATURN"
-    ]
+    "planet": ["MOON", "SATURN"]
   },
   {
     "sign": 9,
@@ -5536,25 +5751,17 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   {
     "sign": 12,
     "sign_name": "Pisces",
-    "planet": [
-      "SUN",
-      "MERCURY",
-      "KETU"
-    ]
+    "planet": ["SUN", "MERCURY", "KETU"]
   },
   {
     "sign": 1,
     "sign_name": "Aries",
-    "planet": [
-      "MARS"
-    ]
+    "planet": ["MARS"]
   },
   {
     "sign": 2,
     "sign_name": "Taurus",
-    "planet": [
-      "VENUS"
-    ]
+    "planet": ["VENUS"]
   },
   {
     "sign": 3,
@@ -5564,9 +5771,7 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   {
     "sign": 4,
     "sign_name": "Cancer",
-    "planet": [
-      "JUPITER"
-    ]
+    "planet": ["JUPITER"]
   },
   {
     "sign": 5,
@@ -5577,32 +5782,35 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
 ```
 
 ### horo_chart_extended/:chart_id
+
 based on chart type(all D-charts) - The data points include various planetary positions including Neptune,Pluto,Uranus along with ascendant and their respective house positions to draw charts.
 
 #### API Endpoint
+
 horo_chart_extended/:chart_id
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/horo_chart_extended/:chart_id|
+| Method | Full URL                                                       |
+| ------ | -------------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/horo_chart_extended/:chart_id |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
 chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+
 > chart_id means the type of chart for which you want data.For example:-
 > chalit : For Chalit Chart,
 > SUN : For Sun Chart,
@@ -5627,16 +5835,16 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
 > D60 : For Shashtymsha Chart,
 > chalit : For Chalit Chart
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 [
   {
     "sign": 3,
     "sign_name": "Gemini",
-    "planet": [
-      "MOON"
-    ]
+    "planet": ["MOON"]
   },
   {
     "sign": 4,
@@ -5646,10 +5854,7 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   {
     "sign": 5,
     "sign_name": "Leo",
-    "planet": [
-      "JUPITER",
-      "RAHU"
-    ]
+    "planet": ["JUPITER", "RAHU"]
   },
   {
     "sign": 6,
@@ -5659,47 +5864,32 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   {
     "sign": 7,
     "sign_name": "Libra",
-    "planet": [
-      "MARS"
-    ]
+    "planet": ["MARS"]
   },
   {
     "sign": 8,
     "sign_name": "Scorpio",
-    "planet": [
-      "SATURN"
-    ]
+    "planet": ["SATURN"]
   },
   {
     "sign": 9,
     "sign_name": "Sagittarius",
-    "planet": [
-      "PLUTO"
-    ]
+    "planet": ["PLUTO"]
   },
   {
     "sign": 10,
     "sign_name": "Capricorn",
-    "planet": [
-      "MERCURY",
-      "VENUS"
-    ]
+    "planet": ["MERCURY", "VENUS"]
   },
   {
     "sign": 11,
     "sign_name": "Aquarius",
-    "planet": [
-      "SUN",
-      "KETU",
-      "NEPTUNE"
-    ]
+    "planet": ["SUN", "KETU", "NEPTUNE"]
   },
   {
     "sign": 12,
     "sign_name": "Pisces",
-    "planet": [
-      "URANUS"
-    ]
+    "planet": ["URANUS"]
   },
   {
     "sign": 1,
@@ -5713,200 +5903,188 @@ chart_id ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Tit
   }
 ]
 ```
+
 ## Kal Sarpa Dosha
+
 Offers Complete kalsarpa dosha analysis report and kalsarpa dosha nivaran remedies.
 
 ### kalsarpa_details
+
 Calculate Kal Sarpa Dosha report.
 
 #### API Endpoint
+
 kalsarpa_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/kalsarpa_details|
+| Method | Full URL                                          |
+| ------ | ------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/kalsarpa_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
-   "present":true,
-   "type":"Partial Ascending",
-   "one_line":"You have ascending kalsarpa dosha direction, which is treated as powerful. The KalSarpa Dosha is having partial effect in your horoscope.",
-   "report":{
-      "house_id":3,
-      "report":"In your horoscope the Vasuki Kaal Sarp Yog is present. Due to this reason the native does not believe in gods and generally is non-religious.There are hurdles in life and native has to struggle for moving ahead but the native usually gets a chance to serve in government. The native may suffer hardships during his stay at a foreign country. His esteem could be low and he may be lazy for some period. Due to Kaal Sarp Yog the native suffers from diseases many times that cause loss of money and the native may suffer due to debts. However things are all right later on.The married life is normal but painful and disturbed. The family life remains disturbed; peace and happiness remain absent on many occasions. The own relatives try to cause harm from time to time. The native may sign in a hurry on important legal documents thus incurring huge loss. He may suffer due to adverse attitude of government officials. However the native also gets a miraculous time in life."
-   }
+  "present": true,
+  "type": "Partial Ascending",
+  "one_line": "You have ascending kalsarpa dosha direction, which is treated as powerful. The KalSarpa Dosha is having partial effect in your horoscope.",
+  "report": {
+    "house_id": 3,
+    "report": "In your horoscope the Vasuki Kaal Sarp Yog is present. Due to this reason the native does not believe in gods and generally is non-religious.There are hurdles in life and native has to struggle for moving ahead but the native usually gets a chance to serve in government. The native may suffer hardships during his stay at a foreign country. His esteem could be low and he may be lazy for some period. Due to Kaal Sarp Yog the native suffers from diseases many times that cause loss of money and the native may suffer due to debts. However things are all right later on.The married life is normal but painful and disturbed. The family life remains disturbed; peace and happiness remain absent on many occasions. The own relatives try to cause harm from time to time. The native may sign in a hurry on important legal documents thus incurring huge loss. He may suffer due to adverse attitude of government officials. However the native also gets a miraculous time in life."
+  }
 }
 ```
 
 ## Lal Kitab
+
 Lal Kitab Provides LalKitab horoscope,debts and remedies.
 
 ### lalkitab_horoscope
+
 Provides lal kitab horoscope chart points.
 
 #### API Endpoint
+
 lalkitab_horoscope
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/lalkitab_horoscope|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/lalkitab_horoscope |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 [
-   {
-      "sign":1,
-      "sign_name":"Aries",
-      "planet":[
-         "JUPITER"
-      ]
-   },
-   {
-      "sign":2,
-      "sign_name":"Taurus",
-      "planet":[
-
-      ]
-   },
-   {
-      "sign":3,
-      "sign_name":"Gemini",
-      "planet":[
-         "RAHU"
-      ]
-   },
-   {
-      "sign":4,
-      "sign_name":"Cancer",
-      "planet":[
-
-      ]
-   },
-   {
-      "sign":5,
-      "sign_name":"Leo",
-      "planet":[
-         "SATURN"
-      ]
-   },
-   {
-      "sign":6,
-      "sign_name":"Virgo",
-      "planet":[
-
-      ]
-   },
-   {
-      "sign":7,
-      "sign_name":"Libra",
-      "planet":[
-
-      ]
-   },
-   {
-      "sign":8,
-      "sign_name":"Scorpio",
-      "planet":[
-         "MOON",
-         "MERCURY"
-      ]
-   },
-   {
-      "sign":9,
-      "sign_name":"Sagittarius",
-      "planet":[
-         "SUN",
-         "MARS",
-         "KETU"
-      ]
-   },
-   {
-      "sign":10,
-      "sign_name":"Capricorn",
-      "planet":[
-         "VENUS"
-      ]
-   },
-   {
-      "sign":11,
-      "sign_name":"Aquarius",
-      "planet":[
-
-      ]
-   },
-   {
-      "sign":12,
-      "sign_name":"Pisces",
-      "planet":[
-
-      ]
-   }
+  {
+    "sign": 1,
+    "sign_name": "Aries",
+    "planet": ["JUPITER"]
+  },
+  {
+    "sign": 2,
+    "sign_name": "Taurus",
+    "planet": []
+  },
+  {
+    "sign": 3,
+    "sign_name": "Gemini",
+    "planet": ["RAHU"]
+  },
+  {
+    "sign": 4,
+    "sign_name": "Cancer",
+    "planet": []
+  },
+  {
+    "sign": 5,
+    "sign_name": "Leo",
+    "planet": ["SATURN"]
+  },
+  {
+    "sign": 6,
+    "sign_name": "Virgo",
+    "planet": []
+  },
+  {
+    "sign": 7,
+    "sign_name": "Libra",
+    "planet": []
+  },
+  {
+    "sign": 8,
+    "sign_name": "Scorpio",
+    "planet": ["MOON", "MERCURY"]
+  },
+  {
+    "sign": 9,
+    "sign_name": "Sagittarius",
+    "planet": ["SUN", "MARS", "KETU"]
+  },
+  {
+    "sign": 10,
+    "sign_name": "Capricorn",
+    "planet": ["VENUS"]
+  },
+  {
+    "sign": 11,
+    "sign_name": "Aquarius",
+    "planet": []
+  },
+  {
+    "sign": 12,
+    "sign_name": "Pisces",
+    "planet": []
+  }
 ]
 ```
 
 ### lalkitab_debts
+
 Provides details of lal kitab debts.
 
 #### API Endpoint
+
 lalkitab_debts
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/lalkitab_debts|
+| Method | Full URL                                        |
+| ------ | ----------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/lalkitab_debts |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 [
   {
@@ -5928,37 +6106,45 @@ lalkitab_debts
 ```
 
 ### lalkitab_remedies/:planet_name
+
 Provides lal kitab remedies based on planet selection.
 
 #### API Endpoint
+
 lalkitab_remedies/:planet_name
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/lalkitab_remedies/:planet_name|
+| Method | Full URL                                                        |
+| ------ | --------------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/lalkitab_remedies/:planet_name |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Planet Name ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Planet Name
+
 > Here planet name means for which planet you want data.
 > Planet name's are as follow:-
 > sun, moon, mars, mercury, jupiter, venus, saturn
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "planet": "Sun",
@@ -5978,36 +6164,43 @@ lalkitab_remedies/:planet_name
   ]
 }
 ```
+
 ## Manglik Dosha
+
 Calculate the detailed report on manglik dosha and its nivaran remedies.
 
 ### manglik
+
 Calculate if Manglik Dosha present or not .
 
 #### API Endpoint
+
 manglik
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/manglik|
+| Method | Full URL                                 |
+| ------ | ---------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/manglik |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | User gender, eg: male OR female|
+| Params | Data type | Descriptions                      |
+| ------ | :-------- | :-------------------------------- |
+| day    | int       | Birth day, eg: 10                 |
+| month  | int       | Birth month, eg:5                 |
+| year   | int       | Birth year, eg:2015               |
+| hour   | int       | Birth hour, eg:5                  |
+| min    | int       | Birth minute, eg:55               |
+| lat    | float     | Birth place latitude, eg: 19.234  |
+| lon    | float     | Birth place longitude, eg: 72.843 |
+| tzone  | float     | Birth place timezone, eg: 5.5     |
+| gender | string    | User gender, eg: male OR female   |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "manglik_present_rule": {
@@ -6034,43 +6227,48 @@ manglik
 ```
 
 ## Match Making
+
 Provides complete match making report like ashtakoot milaan points,manglik report,vedh karak details,rajju chakra ,match conclusion and etc.
 
 ### match_birth_details
+
 Provide basic birth details of both male and female.
 
 #### API Endpoint
+
 match_birth_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_birth_details|
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_birth_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "male_birth_details": {
@@ -6103,40 +6301,44 @@ match_birth_details
 ```
 
 ### match_astro_details
+
 Provide basic Avakhada (Astro) details of both male and female.
 
 #### API Endpoint
+
 match_astro_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_astro_details|
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_astro_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "male_astro_details": {
@@ -6179,40 +6381,44 @@ match_astro_details
 ```
 
 ### match_planet_details
+
 Get planatory details of mail and femail.
 
 #### API Endpoint
+
 match_planet_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_planet_details|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_planet_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "male_planet_details": [
@@ -6483,40 +6689,44 @@ match_planet_details
 ```
 
 ### match_ashtakoot_points
+
 Get Ashtakoot Points.
 
 #### API Endpoint
+
 match_ashtakoot_points
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_ashtakoot_points|
+| Method | Full URL                                                |
+| ------ | ------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_ashtakoot_points |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "varna": {
@@ -6584,40 +6794,44 @@ match_ashtakoot_points
 ```
 
 ### match_ashtakoot_points
+
 Get Ashtakoot Points.
 
 #### API Endpoint
+
 match_ashtakoot_points
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_ashtakoot_points|
+| Method | Full URL                                                |
+| ------ | ------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_ashtakoot_points |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "varna": {
@@ -6685,40 +6899,44 @@ match_ashtakoot_points
 ```
 
 ### match_making_report
+
 Get complete match making report.
 
 #### API Endpoint
+
 match_making_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_making_report|
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_making_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "ashtakoota": {
@@ -6744,40 +6962,44 @@ match_making_report
 ```
 
 ### match_manglik_report
+
 Get manglik report of both male and female.
 
 #### API Endpoint
+
 match_manglik_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_manglik_report|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_manglik_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "male": {
@@ -6846,40 +7068,44 @@ match_manglik_report
 ```
 
 ### match_obstructions
+
 Get Obstruction(Vedh Karak) report.
 
 #### API Endpoint
+
 match_obstructions
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_obstructions|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_obstructions |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "is_present": false,
@@ -6889,40 +7115,44 @@ match_obstructions
 ```
 
 ### match_simple_report
+
 Get simple matching report
 
 #### API Endpoint
+
 match_simple_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/match_simple_report|
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/match_simple_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| m_day      | int | Male Birth day, eg: 10 |
-| m_month     | int      | Male  Birth month, eg:5 |
-| m_year | int      |   Male Birth year, eg:2015 |
-| m_hour | int      |   Male Birth hour, eg:5 |
-| m_min | int      |   Male Birth minute, eg:44 |
-| m_lat | float |Male Birth place latitude, eg: 19.234|
-| m_lon | float |Male Birth place longitude, eg: 72.843|
-| m_tzone | float | Male Birth place timezone, eg: 5.5|
-| f_day      | int |Female Birth day, eg: 10 |
-| f_month     | int      | Female  Birth month, eg:5 |
-| f_year | int      |   Female Birth year, eg:2015 |
-| f_hour | int      |   Female Birth hour, eg:5 |
-| f_min | int      |   Female Birth minute, eg:44 |
-| f_lat | float | Female Birth place latitude, eg: 19.234|
-| f_lon | float |Female  Birth place longitude, eg: 72.843|
-| f_tzone | float |Female Birth place timezone, eg: 5.5|
+| Params  | Data type | Descriptions                             |
+| ------- | :-------- | :--------------------------------------- |
+| m_day   | int       | Male Birth day, eg: 10                   |
+| m_month | int       | Male Birth month, eg:5                   |
+| m_year  | int       | Male Birth year, eg:2015                 |
+| m_hour  | int       | Male Birth hour, eg:5                    |
+| m_min   | int       | Male Birth minute, eg:44                 |
+| m_lat   | float     | Male Birth place latitude, eg: 19.234    |
+| m_lon   | float     | Male Birth place longitude, eg: 72.843   |
+| m_tzone | float     | Male Birth place timezone, eg: 5.5       |
+| f_day   | int       | Female Birth day, eg: 10                 |
+| f_month | int       | Female Birth month, eg:5                 |
+| f_year  | int       | Female Birth year, eg:2015               |
+| f_hour  | int       | Female Birth hour, eg:5                  |
+| f_min   | int       | Female Birth minute, eg:44               |
+| f_lat   | float     | Female Birth place latitude, eg: 19.234  |
+| f_lon   | float     | Female Birth place longitude, eg: 72.843 |
+| f_tzone | float     | Female Birth place timezone, eg: 5.5     |
 
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+#### Response Data
+
 ```json
 {
   "ashtakoota": {
@@ -6947,60 +7177,70 @@ match_simple_report
 ```
 
 ## Numerology Predictions
+
 Provides numerological predictions report. Provides report about name.
 
 ### numero_report
+
 Provides Numerology report.
 
 #### API Endpoint
+
 numero_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_report|
+| Method | Full URL                                       |
+| ------ | ---------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "What the Number Says About You",
   "description": "Your Radical number is 8. The ruler of Radical number 8 is Saturn. Due to Saturns influence you will rise slowly in life. To attain success after crossing obstacles and hardships is in your nature. You will not be deterred by failures though on occasions you may sink in despair. Your staunchest enemy is lethargy and this will be the reason for your decline. Therefore, dont procrastinate. Due to Saturns influence you will do many important jobs, which will render you name, acclaim and eminence. Not many people will understand your style of work. This will create many critics. You will have less tendency for show-off. This may lead people to regard you as a rough and tough person, while deep inside your heart you are quite sentimental and kind hearted. Mostly you will concern yourself with your work. Your tendency will be to confine yourself to your business. This attitude will generate many adverse people.You will have spirit of sacrifice. You will never waver from desired exertion, dedication and sacrifice desired for an endeavour. Therefore, you will certainly attain your goal after crossing hurdles. The people under the influence of Saturn are hardworking and struggling. As they have to cross many obstacles, they attain success somewhat late but their achievements are stable and permanent."
 }
-
 ```
 
 ### numero_fav_time
+
 Suggest favourable time.
 
 #### API Endpoint
+
 numero_fav_time
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_fav_time|
+| Method | Full URL                                         |
+| ------ | ------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/numero_fav_time |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "Favourable Time For You",
@@ -7009,27 +7249,32 @@ numero_fav_time
 ```
 
 ### numero_place_vastu
+
 Gives report of place and vastu
 
 #### API Endpoint
+
 numero_place_vastu
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_place_vastu|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_place_vastu |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "Favourable Place Vastu For You",
@@ -7038,55 +7283,66 @@ numero_place_vastu
 ```
 
 ### numero_fasts_report
+
 Suggest fasts days for native
 
 #### API Endpoint
+
 numero_fasts_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_fasts_report|
+| Method | Full URL                                             |
+| ------ | ---------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_fasts_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "Fast Vrata Timing For You",
   "description": "Observe fast on Saturday for elimination of malefic effects of Saturn. Wear black or blue clothes on these days. Observe this fast for 19 or 51 Saturdays. Massage oil on your body, donate oil and worship Peepal tree. Recite Shani mantra on beads of rudraksha as much as possible."
 }
 ```
+
 ### numero_fav_lord
+
 Provides favourable lords for native
 
 #### API Endpoint
+
 numero_fav_lord
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_fav_lord|
+| Method | Full URL                                         |
+| ------ | ------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/numero_fav_lord |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "Favourable Lord For You",
@@ -7095,27 +7351,32 @@ numero_fav_lord
 ```
 
 ### numero_fav_mantra
+
 Provides favourable mantra for native
 
 #### API Endpoint
+
 numero_fav_mantra
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/numero_fav_mantra|
+| Method | Full URL                                           |
+| ------ | -------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/numero_fav_mantra |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| name | float | Your full name e, eg: Ajeet Kanojia|
+| Params | Data type | Descriptions                        |
+| ------ | :-------- | :---------------------------------- |
+| day    | int       | Birth day, eg: 10                   |
+| month  | int       | Birth month, eg:5                   |
+| year   | int       | Birth year, eg:2015                 |
+| name   | float     | Your full name e, eg: Ajeet Kanojia |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "title": "Favourable Gayatri Mantra For You",
@@ -7124,35 +7385,41 @@ numero_fav_mantra
 ```
 
 ## Pitri Dosha Report
+
 Pitri Dosha Report Calculates Pitra Dosha report
 
 ### pitra_dosha_report
+
 Returns the whether given horoscope has pitra dosha or not and if present it provides with the matching rules for pitra dosha analysis.
 
 #### API Endpoint
+
 pitra_dosha_report
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/pitra_dosha_report|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/pitra_dosha_report |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "what_is_pitri_dosha": "Pitri Dosha is a Karmic Debt of the ancestors and reflected in the horoscope in the form of planetary combinations. It can also happen due to the neglect of ancestors and not providing them their proper due in the form of shraddh or charity or spiritual upliftments.",
@@ -7186,35 +7453,41 @@ pitra_dosha_report
 ```
 
 ## Puja Suggesstion
+
 Returns the personalised puja recommendations based on horoscope.
 
 ### puja_suggestion
+
 Returns the personalised puja recommendations based on horoscope. This API takes in to account the Pitra Dosha in the horoscope, whether there is dasha change, presence of Kal Sarp dosha and Nakshatra
 
 #### API Endpoint
+
 puja_suggestion
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/puja_suggestion|
+| Method | Full URL                                         |
+| ------ | ------------------------------------------------ |
+| POST   | https://json.astrologyapi.com/v1/puja_suggestion |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "summary": "Following are the puja suggestions based on your horoscope and planetary combinations.",
@@ -7240,35 +7513,41 @@ puja_suggestion
 ```
 
 ## Rudraksha Suggestion
+
 Recommends suitable rudraksha with details
 
 ### rudraksha_suggestion
+
 Returns the personalised puja recommendations based on horoscope. This API takes in to account the Pitra Dosha in the horoscope, whether there is dasha change, presence of Kal Sarp dosha and Nakshatra
 
 #### API Endpoint
+
 rudraksha_suggestion
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/rudraksha_suggestion|
+| Method | Full URL                                              |
+| ------ | ----------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/rudraksha_suggestion |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "img_url": "/img/two+thirteen.jpg",
@@ -7279,35 +7558,41 @@ rudraksha_suggestion
 ```
 
 ## Sadhe Sati Report
+
 Provides the Sade Sati report and recommend the remedies.
 
 ### sadhesati_life_details
+
 Get the complete sadhesati details with all their phases and description. This API returns 3 sadhesati life cycles for the given birth detail.
 
 #### API Endpoint
+
 sadhesati_life_details
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sadhesati_life_details|
+| Method | Full URL                                                |
+| ------ | ------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sadhesati_life_details |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "what_is_sadhesati": "Sadhe Sati refers to the seven-and-a-half year period in which Saturn moves through three signs, the moon sign, one before the moon and the one after it. Sadhe Sati starts when Saturn (Shani) enters the 12th sign from the birth Moon sign and ends when Saturn leaves 2nd sign from the birth Moon sign. Since Saturn approximately takes around two and half years to transit a sign which is called Shanis dhaiya it takes around seven and half year to transit three signs and that is why it is known as Sadhe Sati. Generally Sade-Sati comes thrice in a horoscope in the life time - first in childhood, second in youth & third in old-age. First Sade-Sati has effect on education & parents. Second Sade-Sati has effect on profession, finance & family. The last one affects health more than anything else.",
@@ -7533,32 +7818,37 @@ sadhesati_life_details
 ```
 
 ### sadhesati_current_status
+
 Returns whether the given data is undergoing sadhesati or not. It also returns the current saturn transit, birth moon sign and retrograde status of saturn.
 
 #### API Endpoint
+
 sadhesati_current_status
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sadhesati_current_status|
+| Method | Full URL                                                  |
+| ------ | --------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sadhesati_current_status |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "consideration_date": "16-8-2015",
@@ -7572,32 +7862,37 @@ sadhesati_current_status
 ```
 
 ### sadhesati_remedies
+
 Returns the list of sadhesati remedies which can be performed when one is under sadhesati transit.
 
 #### API Endpoint
+
 sadhesati_remedies
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sadhesati_remedies|
+| Method | Full URL                                            |
+| ------ | --------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sadhesati_remedies |
 
 #### Request Data
 
-| Params        | Data type     | Descriptions  |
-| ------------- |:-------------| :-----|
-| day      | int | Birth day, eg: 10 |
-| month     | int      |   Birth month, eg:5 |
-| year | int      |    Birth year, eg:2015 |
-| hour | int      |    Birth hour, eg:5 |
-| min | int      |    Birth minute, eg:55 |
-| lat | float | Birth place latitude, eg: 19.234|
-| lon | float | Birth place longitude, eg: 72.843|
-| tzone | float | Birth place timezone, eg: 5.5|
-| gender | string | OPTIONAL - User gender, eg: male OR female|
+| Params | Data type | Descriptions                               |
+| ------ | :-------- | :----------------------------------------- |
+| day    | int       | Birth day, eg: 10                          |
+| month  | int       | Birth month, eg:5                          |
+| year   | int       | Birth year, eg:2015                        |
+| hour   | int       | Birth hour, eg:5                           |
+| min    | int       | Birth minute, eg:55                        |
+| lat    | float     | Birth place latitude, eg: 19.234           |
+| lon    | float     | Birth place longitude, eg: 72.843          |
+| tzone  | float     | Birth place timezone, eg: 5.5              |
+| gender | string    | OPTIONAL - User gender, eg: male OR female |
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "what_is_sadhesati": "Sadhe Sati refers to the seven-and-a-half year period in which Saturn moves through three signs, the moon sign, one before the moon and the one after it. Sadhe Sati starts when Saturn (Shani) enters the 12th sign from the birth Moon sign and ends when Saturn leaves 2nd sign from the birth Moon sign. Since Saturn approximately takes around two and half years to transit a sign which is called Shanis dhaiya it takes around seven and half year to transit three signs and that is why it is known as Sadhe Sati. Generally Sade-Sati comes thrice in a horoscope in the life time - first in childhood, second in youth & third in old-age. First Sade-Sati has effect on education & parents. Second Sade-Sati has effect on profession, finance & family. The last one affects health more than anything else.",
@@ -7613,22 +7908,29 @@ sadhesati_remedies
   ]
 }
 ```
+
 ## Sun Sign Daily
+
 Get today's daily prediction based on Sun Sign.
 
 ### sun_sign_prediction/daily/:zodiacName
+
 Returns the list of sadhesati remedies which can be performed when one is under sadhesati transit.
 
 #### API Endpoint
+
 sun_sign_prediction/daily/:zodiacName
 
 #### Method & URL
 
-| Method | Full URL |
-| --- | --- |
-| POST | https://api.vedicrishiastro.com/v1/sun_sign_prediction/daily/:zodiacName|
+| Method | Full URL                                                               |
+| ------ | ---------------------------------------------------------------------- |
+| POST   | https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName |
 
-#### zodiacName ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### zodiacName ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### zodiacName
+
 > Where Zodiac name is -
 > aries,
 > taurus,
@@ -7643,7 +7945,10 @@ sun_sign_prediction/daily/:zodiacName
 > aquarius,
 > pisces
 
-#### Response Data  ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1")
+<!-- #### Response Data ![alt text](http://localhost/astrologyapi/img/right-arrow.png "Logo Title Text 1") -->
+
+#### Response Data
+
 ```json
 {
   "status": true,
@@ -7659,4 +7964,3 @@ sun_sign_prediction/daily/:zodiacName
   }
 }
 ```
-
